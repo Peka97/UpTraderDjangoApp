@@ -1,0 +1,27 @@
+{% load menu_tags %}
+
+<ul class="menu {{ menu_name }}">
+    {% for item in menu_items %}
+        <li class="menu-item {% if item.is_active %}active{% endif %} {% if item.is_expanded %}expanded{% endif %}">
+            <a href="{{ item.get_url }}" class="menu-link">{{ item.name }}</a>
+            {% if item.prefetched_children %}
+                <ul class="submenu">
+                    {% for child in item.prefetched_children %}
+                        <li class="submenu-item {% if child.is_active %}active{% endif %} {% if child.is_expanded %}expanded{% endif %}">
+                            <a href="{{ child.get_url }}" class="submenu-link">{{ child.name }}</a>
+                            {% if child.children and child.is_expanded %}
+                                <ul class="subsubmenu">
+                                    {% for subchild in child.children %}
+                                        <li class="subsubmenu-item {% if subchild.is_active %}active{% endif %}">
+                                            <a href="{{ subchild.get_url }}">{{ subchild.name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,149 @@
+
+:root {
+    --primary-color: #4a6fa5;
+    --hover-color: #3a5a8a;
+    --active-color: #2c4a7a;
+    --text-color: #333;
+    --light-text: #f8f9fa;
+    --border-radius: 6px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0 20px;
+    font-weight: 500;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.sidebar {
+    flex: 0 0 280px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+.content {
+    flex: 1;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    padding: 30px;
+}
+
+.menu-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu {
+    margin-bottom: 30px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.menu li a:hover {
+    background-color: #f0f4f8;
+    color: var(--primary-color);
+}
+
+.menu li.active > a {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+.menu ul ul {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.menu ul ul li a {
+    padding-left: 25px;
+    position: relative;
+}
+
+.menu ul ul li a:before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.menu ul ul li.active > a:before {
+    background-color: white;
+}
+
+.page-title {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        position: static;
+        margin-bottom: 20px;
+    }
+}
+    

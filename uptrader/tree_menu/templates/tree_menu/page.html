@@ -1,0 +1,36 @@
+{% load static %}
+{% load menu_tags %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static "tree_menu/css/style.css" %}">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Древовидное меню</h1>
+        </div>
+    </div>
+    <h1>{{ title }}</h1>
+    
+    <div class="container">
+        <div class="row">
+            <div class="sidebar">
+                <div class="menu">
+                    {% draw_menu 'main_menu' %}
+                </div>
+            </div>
+
+            <div class="content">
+                <h2 class="page-title">Добро пожаловать!</h2>
+                <p>Это демонстрация древовидного меню. Вы можете видеть активный пункт меню, выделенный цветом, и раскрытую ветку до текущей страницы. По Django Debug Toolbar видно, что выполняется ровно один запрос в БД для меню.</p>
+                <p>Меню полностью адаптивно и будет хорошо выглядеть как на компьютере, так и на мобильных устройствах.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
