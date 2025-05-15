@@ -1,7 +1,7 @@
 # UpTrader Django App
 
-![Django](https://img.shields.io/badge/Django-3.2-green.svg)
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Django](https://img.shields.io/badge/Django-5.2.1-green.svg)
+![Python](https://img.shields.io/badge/Python-3.10.12-blue.svg)
 
 Демо-проект в рамках тестового задания для UpTrader.
 
