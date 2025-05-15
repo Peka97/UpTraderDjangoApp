@@ -30,8 +30,7 @@ pip install -r requirements.txt
 ```
 
 4. **Настройте базу данных**
-```
-bash
+```bash
 cd uptrader/
 python manage.py makemigrations
 python manage.py migrate
